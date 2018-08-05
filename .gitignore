@@ -4,8 +4,12 @@
 
 .DS_Store
 
-docs/build/
-docs/site/
+doc/build/
+doc/site/
+
+doc/src/stdlib/
+doc/deps
+doc/UnicodeData.txt
 
 *.ipynb_checkpoints
 **/*.ipynb_checkpoints
