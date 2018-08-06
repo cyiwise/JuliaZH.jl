@@ -33,8 +33,7 @@ cd(joinpath(@__DIR__, "src")) do
 end
 
 # manual/unicode-input.md
-download("http://www.unicode.org/Public/9.0.0/ucd/UnicodeData.txt", joinpath(@__DIR__, "UnicodeData.txt"))
-cp(joinpath(@__DIR__, "UnicodeData.txt"), joinpath(Sys.BINDIR, "..", "..", "doc", "UnicodeData.txt"))
+download("http://www.unicode.org/Public/9.0.0/ucd/UnicodeData.txt", joinpath(Sys.BINDIR, "UnicodeData.txt"))
 
 const PAGES = [
     "主页" => "index.md",
@@ -143,8 +142,6 @@ makedocs(
     clean     = false,
     doctest   = false,
     linkcheck = "linkcheck=true" in ARGS,
-    linkcheck_ignore = ["https://bugs.kde.org/show_bug.cgi?id=136779"], # fails to load from nanosoldier?
-    strict    = true,
     checkdocs = :none,
     format    = "pdf" in ARGS ? :latex : :html,
     sitename  = "Julia中文文档",
